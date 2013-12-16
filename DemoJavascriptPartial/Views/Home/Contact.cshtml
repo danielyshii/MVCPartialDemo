@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<div id="div-contact-container">
+</div>
+
+
+@section scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/ImageManager.js")"></script>
+
+    <script type="text/javascript">
+
+        clickEvent = function (element) {
+            alert("Hello From Contact : " + element.currentTarget.alt);
+        }
+
+        var divContainer = $('#div-contact-container');
+
+        var manager = new ImageManager({ container: divContainer, clickHandler: clickEvent });
+
+    </script>
+
+}
